@@ -7,7 +7,6 @@ import java.io.InputStreamReader;
 import java.lang.reflect.Constructor;
 import java.util.List;
 import java.util.LinkedList;
-import java.nio.file.Files;
 
 
 public abstract class JSONParser implements IJSONParser {
@@ -17,7 +16,7 @@ public abstract class JSONParser implements IJSONParser {
 	 */
 	private static final long serialVersionUID = 1L;
 
-	public List parse(BufferedReader sr){
+	public List parse(BufferedReader sr)throws Exception{
 		List v = new LinkedList();
 		Class cl;
 		Object ft;
@@ -65,7 +64,7 @@ public abstract class JSONParser implements IJSONParser {
 		return v;
 	}
 	
-	public List parse(String sr){
+	public List parse(String sr)throws Exception{
 		List v = new LinkedList();
 		Class cl;
 		Object ft;
@@ -109,7 +108,7 @@ public abstract class JSONParser implements IJSONParser {
 		return v;
 	}
 	
-	public List parse(FileReader sr){
+	public List parse(FileReader sr)throws Exception{
 		List v = new LinkedList();
 		Class cl;
 		Object ft;
@@ -158,7 +157,7 @@ public abstract class JSONParser implements IJSONParser {
 		return v;
 	}
 	
-	public List parse(InputStreamReader sr){
+	public List parse(InputStreamReader sr)throws Exception{
 		List v = new LinkedList();
 		Class cl;
 		Object ft;
