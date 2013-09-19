@@ -9,7 +9,7 @@ import java.util.List;
 import java.util.LinkedList;
 
 
-public abstract class JSONParser implements IJSONParser {
+public abstract class JSONParser implements IJSONParser<JSONParser> {
 
 	/**
 	 * 
