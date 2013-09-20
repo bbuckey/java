@@ -35,4 +35,15 @@ public class JSON extends JSONParser {
 		return super.parse(new InputStreamReader(dis));
 	}
 
+	
+	/**
+	 * 
+	 * @param sr takes a string
+	 * @return List of objects created when the json is parsed
+	 * @throws Exception
+	 */
+	public List parse(String sr)throws Exception{
+		return super.parse(new String(sr));
+	}
+	
 }

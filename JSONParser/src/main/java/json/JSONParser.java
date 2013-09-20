@@ -15,7 +15,7 @@ public abstract class JSONParser  implements IJSONParser<JSONParser> {
 	 */
 	private static final long serialVersionUID = 1L;
 
-	public List parse(BufferedReader sr)throws Exception{
+	protected List parse(BufferedReader sr)throws Exception{
 		List v = new LinkedList();
 		Class cl;
 		Object ft;
@@ -63,7 +63,7 @@ public abstract class JSONParser  implements IJSONParser<JSONParser> {
 		return v;
 	}
 	
-	public List parse(String sr)throws Exception{
+	protected List parse(String sr)throws Exception{
 		List v = new LinkedList();
 		Class cl;
 		Object ft;
@@ -107,7 +107,7 @@ public abstract class JSONParser  implements IJSONParser<JSONParser> {
 		return v;
 	}
 	
-	public List parse(FileReader sr)throws Exception{
+	protected List parse(FileReader sr)throws Exception{
 		List v = new LinkedList();
 		Class cl;
 		Object ft;
@@ -156,7 +156,7 @@ public abstract class JSONParser  implements IJSONParser<JSONParser> {
 		return v;
 	}
 	
-	public List parse(InputStreamReader sr)throws Exception{
+	protected List parse(InputStreamReader sr)throws Exception{
 		List v = new LinkedList();
 		Class cl;
 		Object ft;
