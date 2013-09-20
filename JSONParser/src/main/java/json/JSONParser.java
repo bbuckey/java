@@ -8,8 +8,7 @@ import java.lang.reflect.Constructor;
 import java.util.List;
 import java.util.LinkedList;
 
-
-public abstract class JSONParser implements IJSONParser<JSONParser> {
+public abstract class JSONParser  implements IJSONParser<JSONParser> {
 
 	/**
 	 * 
