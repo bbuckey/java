@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src/main/java"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="lib" path="/Users/badmin/javalibs/javamail-1.4.7/mail.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:file:/Users/badmin/javalibs/javadocs/javaemailapi.zip!/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="/Users/badmin/javalibs/javamail-1.4.7/lib/dsn.jar"/>
+	<classpathentry kind="lib" path="/Users/badmin/javalibs/javamail-1.4.7/lib/gimap.jar"/>
+	<classpathentry kind="lib" path="/Users/badmin/javalibs/javamail-1.4.7/lib/imap.jar"/>
+	<classpathentry kind="lib" path="/Users/badmin/javalibs/javamail-1.4.7/lib/mailapi.jar"/>
+	<classpathentry kind="lib" path="/Users/badmin/javalibs/javamail-1.4.7/lib/pop3.jar"/>
+	<classpathentry kind="lib" path="/Users/badmin/javalibs/javamail-1.4.7/lib/smtp.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>
