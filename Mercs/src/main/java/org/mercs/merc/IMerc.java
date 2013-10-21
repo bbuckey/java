@@ -1,6 +1,8 @@
 package org.mercs.merc;
 
 import java.io.Serializable;
+import org.merc.weapons.Weapon;
+
 
 public interface IMerc extends Serializable {
 
@@ -10,6 +12,6 @@ public interface IMerc extends Serializable {
 	public long getID();
 	public String getName();
 	public boolean isComp();
-	//public Weapon getWep(); player holder for weapons class
+	public Weapon getWep();
 	
 }

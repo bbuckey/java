@@ -1,6 +1,7 @@
 package org.mercs.merc;
 
 import org.mercs.merc.IMerc;
+import org.merc.weapons.Weapon;
 
 import java.util.UUID;
 // TO-DO ADD HANDLER FOR ID TO MAKE SURE THE MAX ID IS NEVER HIT IF SO THEN SWITCH TO GUID
@@ -15,7 +16,7 @@ public class Merc implements IMerc {
 	private int hp;
 	private int atk;
 	private int def;
-	//private Weapon wep;
+	private Weapon wep;
 	private long id;
 	private boolean comp;
 	private int refresh;
@@ -53,13 +54,13 @@ public class Merc implements IMerc {
 		return this.name;
 	}
 	
-//	public void setWep(String _name){
-	//	this.wep = _name;
-//	}
+	public void setWep(Weapon _name){
+		this.wep = _name;
+	}
 	
-//	public Weapon getWep(){
-	//	return this.wep;
-//	}
+	public Weapon getWep(){
+		return this.wep;
+	}
 	
 	
 	public void setAtk(int _name){
@@ -105,6 +106,35 @@ public class Merc implements IMerc {
 		return id;
 	}
 	
+	public int getATKwithWep(){
+		if(wep != null){
+			return atk + wep.getPlusatk();
+		} else {
+			return atk;
+		}
+	}
 	
+	public int getHPwithWep(){
+		if(wep != null){
+			return hp + wep.getPlushp();
+		} else {
+			return hp;
+		}
+	}
 	
+	public int getRefreshwithWep(){
+		if(wep != null){
+			return refresh + wep.getPlusref();
+		} else {
+			return refresh;
+		}
+	}
+	
+	public int getDefwithWep(){
+		if(wep != null){
+			return def + wep.getPlusdef();
+		} else {
+			return def;
+		}
+	}
 }
