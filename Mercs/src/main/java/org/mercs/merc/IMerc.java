@@ -10,8 +10,10 @@ public interface IMerc extends Serializable {
 	public int getDef();
 	public int getHP();
 	public long getID();
+	public int getExperiance();
 	public String getName();
 	public boolean isComp();
 	public Weapon getWep();
+	public int getRefresh();
 	
 }

@@ -21,6 +21,7 @@ public class Merc implements IMerc {
 	private boolean comp;
 	private int refresh;
 	private UUID guid;
+	private int experiance;
 	
 	/**
 	 * this is the base class for a merc
@@ -31,7 +32,7 @@ public class Merc implements IMerc {
 	 * @param _name name of merc
 	 * @param _comp is the merc is a computer merc or a player
 	 */
-	Merc(long _id, int _hp, int _atk, int _def, String _name, boolean _comp){
+	Merc(long _id, int _hp, int _atk, int _def, String _name, boolean _comp, int _experiance){
 		hp = _hp;
 	atk = _atk;
 	def = _def;
@@ -39,6 +40,7 @@ public class Merc implements IMerc {
 	name = _name;
 	comp = _comp;
 	refresh = 0;
+	experiance = _experiance;
 	guid = UUID.randomUUID();
 	}
 	
@@ -67,26 +69,12 @@ public class Merc implements IMerc {
 		this.atk = _name;
 	}
 	
-	public int getAtk(){
-		return this.atk;
-	}
-	
-	
 	public void setHP(int _name){
 		this.hp = _name;
 	}
 	
-	public int getHP(){
-		return this.hp;
-	}
-	
-	
 	public void setDef(int _name){
 		this.def = _name;
-	}
-	
-	public int getDef(){
-		return this.def;
 	}
 	
 	public boolean isComp(){
@@ -96,17 +84,12 @@ public class Merc implements IMerc {
 	public void setRefresh(int _refresh){
 		this.refresh = _refresh;
 	}
-	
-	public int getRefresh(){
-		return this.refresh;
-	}
-
 
 	public long getID() {
 		return id;
 	}
 	
-	public int getATKwithWep(){
+	public int getAtk(){
 		if(wep != null){
 			return atk + wep.getPlusatk();
 		} else {
@@ -114,7 +97,7 @@ public class Merc implements IMerc {
 		}
 	}
 	
-	public int getHPwithWep(){
+	public int getHP(){
 		if(wep != null){
 			return hp + wep.getPlushp();
 		} else {
@@ -122,7 +105,7 @@ public class Merc implements IMerc {
 		}
 	}
 	
-	public int getRefreshwithWep(){
+	public int getRefresh(){
 		if(wep != null){
 			return refresh + wep.getPlusref();
 		} else {
@@ -130,11 +113,19 @@ public class Merc implements IMerc {
 		}
 	}
 	
-	public int getDefwithWep(){
+	public int getDef(){
 		if(wep != null){
 			return def + wep.getPlusdef();
 		} else {
 			return def;
 		}
+	}
+	
+	public int getExperiance(){
+		return this.experiance;
+	}
+	
+	public void setExperance(int exp){
+		experiance = exp;
 	}
 }
