@@ -37,6 +37,16 @@ public class SQLRunner extends SQLiteDataBase {
 		}
 	}
 
+	public void runDMLStatmenet(String s)throws Exception{
+		super.getSqlConn().exec(s);
+	}
+	
+	public void runDMLStatmenet(String ... s)throws Exception{
+		for(String st : s){
+			super.getSqlConn().exec(st);
+		}
+	}
+	
 	public SQLiteStatement runSQLStatement(SQLParts sqlparts) throws Exception{
 		SQLiteStatement sql = super.getSqlConn().prepare(sqlparts);
 		return sql;

@@ -6,7 +6,7 @@ import isqlite.ISQLite;
 
 import com.almworks.sqlite4java.SQLiteConnection;
 
-abstract class SQLiteDataBase implements ISQLite<SQLiteDataBase> {
+public abstract class SQLiteDataBase implements ISQLite<SQLiteDataBase> {
 
 	/**
 	 * 
@@ -35,4 +35,5 @@ abstract class SQLiteDataBase implements ISQLite<SQLiteDataBase> {
 		return sqlDB;
 	}
 
+	
 }

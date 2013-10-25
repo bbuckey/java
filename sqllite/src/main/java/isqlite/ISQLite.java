@@ -5,11 +5,6 @@ import com.almworks.sqlite4java.SQLiteConnection;
 import java.io.File;
 
 public interface ISQLite<T> extends Serializable{
-
-	
-	public SQLiteConnection getSqlConn();
-	
-	public File getSqlDB();
-	
+	public File getSqlDB();	
 	public T getInstance();
 }
