@@ -15,5 +15,7 @@ public interface IMerc extends Serializable {
 	public boolean isComp();
 	public Weapon getWep();
 	public int getRefresh();
+	public int getAtkCounter();
+	public void setAtkCounter(int i);
 	
 }

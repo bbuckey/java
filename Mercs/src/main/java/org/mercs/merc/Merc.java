@@ -22,6 +22,7 @@ public class Merc implements IMerc {
 	private int refresh;
 	private UUID guid;
 	private int experiance;
+	private int atkCounter;
 	
 	/**
 	 * this is the base class for a merc
@@ -126,6 +127,15 @@ public class Merc implements IMerc {
 	}
 	
 	public void setExperance(int exp){
-		experiance = exp;
+		this.experiance = exp;
 	}
+	
+	public int getAtkCounter(){
+		return this.atkCounter;
+	}
+	
+	public void setAtkCounter(int exp){
+		this.atkCounter = exp;
+	}
+	
 }

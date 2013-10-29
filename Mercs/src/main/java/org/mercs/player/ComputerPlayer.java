@@ -1,5 +1,8 @@
 package org.mercs.player;
 
+import java.util.LinkedList;
+import java.util.List;
+
 import org.mercs.merc.IMerc;
 import org.mercs.merc.Merc;
 
@@ -7,13 +10,19 @@ public class ComputerPlayer extends MercPlayer{
 	
 	private int experiance;
 	private int gold;
+	protected List<IMerc> ComputerMercs = new LinkedList<IMerc>();
+	private Merc levelBoss;
 
-	ComputerPlayer(Merc[] mercs, int goldlevel){
-		super(mercs);
-		for(int i = 0; i < mercs.length; i++){
-			experiance += mercs[i].getExperiance();
-			gold +=  Math.abs(mercs[i].getExperiance() % goldlevel);
+	ComputerPlayer(List<Merc> mercs, int goldlevel, Merc boss){
+		super();
+		for(Merc merc : mercs){
+			experiance += merc.getExperiance();
+			gold +=  Math.abs(merc.getExperiance() % goldlevel);
 		}
+		levelBoss = boss;
+		experiance += boss.getExperiance();
+		gold +=  Math.abs(boss.getExperiance() % goldlevel);
+		//sqwad[0] = 
 	}
 	
 	public int getGold(){
