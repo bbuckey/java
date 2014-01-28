@@ -28,15 +28,15 @@ public abstract class JSONParser  implements IJSONParser<JSONParser> {
 			if(line.isEmpty()){
 			line = sr.readLine();
 			}
-			if(line.contains(";")){
-				for(String jstr : line.split(";")){
+			if(line.contains(",")){
+				for(String jstr : line.split(",")){
 			String obj = jstr.substring(0, jstr.indexOf(":")).trim().replace("\"", "");
-			String val = jstr.substring(jstr.indexOf(":")).trim().replace("\"", "");
+			String val = jstr.substring(jstr.indexOf(":")+1).trim().replace("\"", "");
 			cl = getClass().getClassLoader().loadClass(obj);
 			System.err.println(cl.getCanonicalName());
 			Constructor[] m = cl.getConstructors();
 			if(val.contains(",")){
-			ft = (Object) m[0].newInstance(val.split(","));
+			ft = (Object) m[0].newInstance(val.split(";"));
 			} else {
 				ft = (Object) m[0].newInstance(val);
 			}
@@ -44,12 +44,12 @@ public abstract class JSONParser  implements IJSONParser<JSONParser> {
 				}
 			} else {
 				String obj = line.substring(0, line.indexOf(":")).trim().replace("\"", "");
-				String val = line.substring(line.indexOf(":")).trim().replace("\"", "");
+				String val = line.substring(line.indexOf(":")+1).trim().replace("\"", "");
 				cl = getClass().getClassLoader().loadClass(obj);
 				System.err.println(cl.getCanonicalName());
 				Constructor[] m = cl.getConstructors();
-				if(val.contains(",")){
-				ft = (Object) m[0].newInstance(val.split(","));
+				if(val.contains(";")){
+				ft = (Object) m[0].newInstance(val.split(";"));
 				} else {
 					ft = (Object) m[0].newInstance(val);
 				}
@@ -72,15 +72,15 @@ public abstract class JSONParser  implements IJSONParser<JSONParser> {
 				if(sr == null || sr.isEmpty()){
 					break;
 				}
-				if(sr.contains(";")){
-					for(String jstr : sr.split(";")){
+				if(sr.contains(",")){
+					for(String jstr : sr.split(",")){
 				String obj = jstr.substring(0, jstr.indexOf(":")).trim().replace("\"", "");
-				String val = jstr.substring(jstr.indexOf(":")).trim().replace("\"", "");
+				String val = jstr.substring(jstr.indexOf(":")+1).trim().replace("\"", "");
 				cl = getClass().getClassLoader().loadClass(obj);
 				System.err.println(cl.getCanonicalName());
 				Constructor[] m = cl.getConstructors();
 				if(val.contains(",")){
-				ft = (Object) m[0].newInstance(val.split(","));
+				ft = (Object) m[0].newInstance(val.split(";"));
 				} else {
 					ft = (Object) m[0].newInstance(val);
 				}
@@ -92,8 +92,8 @@ public abstract class JSONParser  implements IJSONParser<JSONParser> {
 					cl = getClass().getClassLoader().loadClass(obj);
 					System.err.println(cl.getCanonicalName());
 					Constructor[] m = cl.getConstructors();
-					if(val.contains(",")){
-					ft = (Object) m[0].newInstance(val.split(","));
+					if(val.contains(";")){
+					ft = (Object) m[0].newInstance(val.split(";"));
 					} else {
 						ft = (Object) m[0].newInstance(val);
 					}
@@ -121,15 +121,15 @@ public abstract class JSONParser  implements IJSONParser<JSONParser> {
 			if(line.isEmpty()){
 			line = br.readLine();
 			}
-			if(line.contains(";")){
-				for(String jstr : line.split(";")){
+			if(line.contains(",")){
+				for(String jstr : line.split(",")){
 			String obj = jstr.substring(0, jstr.indexOf(":")).trim().replace("\"", "");
-			String val = jstr.substring(jstr.indexOf(":")).trim().replace("\"", "");
+			String val = jstr.substring(jstr.indexOf(":")+1).trim().replace("\"", "");
 			cl = getClass().getClassLoader().loadClass(obj);
 			System.err.println(cl.getCanonicalName());
 			Constructor[] m = cl.getConstructors();
-			if(val.contains(",")){
-			ft = (Object) m[0].newInstance(val.split(","));
+			if(val.contains(";")){
+			ft = (Object) m[0].newInstance(val.split(";"));
 			} else {
 				ft = (Object) m[0].newInstance(val);
 			}
@@ -137,12 +137,12 @@ public abstract class JSONParser  implements IJSONParser<JSONParser> {
 				}
 			} else {
 				String obj = line.substring(0, line.indexOf(":")).trim().replace("\"", "");
-				String val = line.substring(line.indexOf(":")).trim().replace("\"", "");
+				String val = line.substring(line.indexOf(":")+1).trim().replace("\"", "");
 				cl = getClass().getClassLoader().loadClass(obj);
 				System.err.println(cl.getCanonicalName());
 				Constructor[] m = cl.getConstructors();
-				if(val.contains(",")){
-				ft = (Object) m[0].newInstance(val.split(","));
+				if(val.contains(";")){
+				ft = (Object) m[0].newInstance(val.split(";"));
 				} else {
 					ft = (Object) m[0].newInstance(val);
 				}
@@ -170,15 +170,15 @@ public abstract class JSONParser  implements IJSONParser<JSONParser> {
 			if(line.isEmpty()){
 			line = br.readLine();
 			}
-			if(line.contains(";")){
-				for(String jstr : line.split(";")){
+			if(line.contains(",")){
+				for(String jstr : line.split(",")){
 			String obj = jstr.substring(0, jstr.indexOf(":")).trim().replace("\"", "");
-			String val = jstr.substring(jstr.indexOf(":")).trim().replace("\"", "");
+			String val = jstr.substring(jstr.indexOf(":")+1).trim().replace("\"", "");
 			cl = getClass().getClassLoader().loadClass(obj);
 			System.err.println(cl.getCanonicalName());
 			Constructor[] m = cl.getConstructors();
-			if(val.contains(",")){
-			ft = (Object) m[0].newInstance(val.split(","));
+			if(val.contains(";")){
+			ft = (Object) m[0].newInstance(val.split(";"));
 			} else {
 				ft = (Object) m[0].newInstance(val);
 			}
@@ -186,12 +186,12 @@ public abstract class JSONParser  implements IJSONParser<JSONParser> {
 				}
 			} else {
 				String obj = line.substring(0, line.indexOf(":")).trim().replace("\"", "");
-				String val = line.substring(line.indexOf(":")).trim().replace("\"", "");
+				String val = line.substring(line.indexOf(":")+1).trim().replace("\"", "");
 				cl = getClass().getClassLoader().loadClass(obj);
 				System.err.println(cl.getCanonicalName());
 				Constructor[] m = cl.getConstructors();
-				if(val.contains(",")){
-				ft = (Object) m[0].newInstance(val.split(","));
+				if(val.contains(";")){
+				ft = (Object) m[0].newInstance(val.split(";"));
 				} else {
 					ft = (Object) m[0].newInstance(val);
 				}
