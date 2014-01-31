@@ -2,6 +2,7 @@ package json;
 
 import java.io.BufferedReader;
 import java.util.List;
+import java.util.Map;
 import java.io.Reader;
 import java.io.InputStream;
 import java.io.InputStreamReader;
@@ -21,7 +22,7 @@ public class JSON extends JSONParser {
 	 * @return List of objects created when the json is parsed
 	 * @throws Exception
 	 */
-	public List parse(Reader sr) throws Exception{
+	public Map parse(Reader sr) throws Exception{
 		return super.parse(new BufferedReader(sr));
 	}
 	
@@ -31,7 +32,7 @@ public class JSON extends JSONParser {
 	 * @return List of objects created when the json is parsed
 	 * @throws Exception
 	 */
-	public List parse(InputStream dis)throws Exception{
+	public Map parse(InputStream dis)throws Exception{
 		return super.parse(new InputStreamReader(dis));
 	}
 
@@ -42,8 +43,9 @@ public class JSON extends JSONParser {
 	 * @return List of objects created when the json is parsed
 	 * @throws Exception
 	 */
-	public List parse(String sr)throws Exception{
+	public Map parse(String sr)throws Exception{
 		return super.parse(new String(sr));
 	}
 	
 }
+
