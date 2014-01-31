@@ -47,25 +47,27 @@ public class JSON extends JSONParser {
 		return super.parse(new String(sr));
 	}
 	
-		/**
+	/**
 	 * Given the class and the object the Fields and methods
 	 * are then cycled through looking for the getters if one is found a   
 	 * @param clazz
 	 * @param obj
 	 * @return
 	 */
-	public  String jsonify(Class<?> clazz, Object obj) throws Throwable{
+	public static String jsonify(Class<?> clazz, Object obj) throws Throwable{
 		String json = "";
 		Method[] methods = clazz.getMethods();
 		Field[] fields = clazz.getDeclaredFields(); 
 		for(Field f : fields){
 			String fieldName = f.getName().toUpperCase();
+			System.err.println(fieldName);
 			for(Method m : methods){
 				String methodName = m.getName().toUpperCase();
-				if(methodName.startsWith("get") && methodName.endsWith(fieldName)){
+				System.err.println(methodName);
+				if(methodName.startsWith("GET") && methodName.endsWith(fieldName)){
 					try{
 					Object o = m.invoke(obj);
-					json += json.equals("") ? "{" + fieldName + " : " +o.toString() :  " , " + fieldName + " : " + o.toString();
+					json += json.equals("") ? "{" + f.getName() + " : " +o.toString() :  " , " + f.getName() + " : " + o.toString();
 					} catch (Throwable t){
 						throw t;
 					}
